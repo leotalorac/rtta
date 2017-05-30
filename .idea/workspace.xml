@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d7b40f2-3545-4bce-843d-7e2895fbea98" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Startlistener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/runttages/Main.class" afterPath="$PROJECT_DIR$/out/production/runttages/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/runttages/Menu.class" afterPath="$PROJECT_DIR$/out/production/runttages/Menu.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/runttages/Scene.class" afterPath="$PROJECT_DIR$/out/production/runttages/Scene.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/runttages/Screen.class" afterPath="$PROJECT_DIR$/out/production/runttages/Screen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/runttages/TAdapter.class" afterPath="$PROJECT_DIR$/out/production/runttages/TAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Menu.java" afterPath="$PROJECT_DIR$/src/Menu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Scene.java" afterPath="$PROJECT_DIR$/src/Scene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Screen.java" afterPath="$PROJECT_DIR$/src/Screen.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,8 +59,8 @@
       <file leaf-file-name="Scene.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Scene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="207" column="9" lean-forward="false" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
+            <state relative-caret-position="1343">
+              <caret line="216" column="21" lean-forward="false" selection-start-line="216" selection-start-column="21" selection-end-line="216" selection-end-column="21" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -111,6 +103,10 @@
       <find>rectan</find>
       <find>ta</find>
       <find>jum</find>
+      <find>175</find>
+      <find>rec</find>
+      <find>170</find>
+      <find>char</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -118,6 +114,7 @@
       <replace>f</replace>
       <replace>-10</replace>
       <replace>180</replace>
+      <replace>160</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -695,8 +692,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Scene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="207" column="9" lean-forward="false" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
+        <state relative-caret-position="1343">
+          <caret line="216" column="21" lean-forward="false" selection-start-line="216" selection-start-column="21" selection-end-line="216" selection-end-column="21" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />

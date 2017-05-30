@@ -141,18 +141,18 @@ public class Scene extends JPanel implements ActionListener{
             f = this.createfloor(floorSprites);
             if(s1) {
                 xf = xm1;
-                r = new Rectangle(xf+(f.length*150),yf+80,170,200);
+                r = new Rectangle(xf+(f.length*150)+10,yf+80,160,200);
                 fall[0] = r;
                 s1=false;
             }else{
                 xm1=xf3+250;
-                //r = new Rectangle(xf3+25,yf+80,170,200);
+                //r = new Rectangle(xf3+25,yf+80,160,200);
                 //fall[0] = r;
             }
 
             crea = false;
         }
-        //g.drawRect(xf3+25,yf+80,170,200);
+        ////g.drawRect(xf3+25,yf+80,160,200);
         xf=xm1;
         for (int j =0;j<f.length;j++){
             g.drawImage(f[j],xf,yf,150,250,null);
@@ -165,9 +165,9 @@ public class Scene extends JPanel implements ActionListener{
             crea2 = false;
             xm2 =xf+250;
         }
-        r = new Rectangle(xf+25,yf+80,170,200);
+        r = new Rectangle(xf+40,yf+80,160,200);
         fall[1] = r;
-        //g.drawRect(xf+25,yf+80,170,200);
+        ////g.drawRect(xf+25,yf+80,160,200);
         xf2=xm2;
             for (int j =0;j<f2.length;j++){
                 g.drawImage(f2[j],xf2,yf,150,250,null);
@@ -180,18 +180,18 @@ public class Scene extends JPanel implements ActionListener{
             xm3 =xf2+250;
             crea3 = false;
         }
-        r = new Rectangle(xf2+25,yf+80,170,200);
+        r = new Rectangle(xf2+40,yf+80,160,200);
         fall[2] = r;
-        //g.drawRect(xf2+25,yf+80,170,200);
-        System.out.println("x: " +(xf2+25)+ " y: "+(yf+80)+" -170"+"-200");
+        ////g.drawRect(xf2+25,yf+80,160,200);
+        System.out.println("x: " +(xf2+25)+ " y: "+(yf+80)+" -160"+"-200");
         xf3=xm3;
         for (int j =0;j<f3.length;j++){
             g.drawImage(f3[j],xf3,yf,150,250,null);
             xf3+=150;
         }
-        r = new Rectangle(xf3+25,yf+80,170,200);
+        r = new Rectangle(xf3+40,yf+80,160,200);
         fall[0] = r;
-        //g.drawRect(xf3+25,yf+80,170,200);
+        //g.drawRect(xf3+40,yf+80,160,200);
         xm3-=20;
         if(xf<0){
             crea=true;
@@ -207,15 +207,17 @@ public class Scene extends JPanel implements ActionListener{
             jumpstar = key.jump;
         }
         if(jumpstar){
-            g.drawImage(chSpritesJump[chscounter],xj,yj,111,170,null);
-            r = new Rectangle(xj,yj,101,160);
+            g.drawImage(chSpritesJump[chscounter],xj,yj,111,160,null);
+            r = new Rectangle(xj,yj,90,140);
+            //g.drawRect(xj,yj,90,140);
             character =r;
         }else if(run){
-            g.drawImage(chSprites[chscounter],175,385,111,170,null);
-            r = new Rectangle(175,385,101,160);
+            g.drawImage(chSprites[chscounter],175,385,111,160,null);
+            r = new Rectangle(175,385,90,140);
+            //g.drawRect(175,385,90,140);
             character =r;
         }else if(dead){
-            g.drawImage(chSpritesDead[chscounter],175,yd,111,170,null);
+            g.drawImage(chSpritesDead[chscounter],175,yd,111,160,null);
             yd+=10;
             if(chscounter>8){
                 Font currentFont = g.getFont();
