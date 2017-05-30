@@ -9,10 +9,15 @@ import java.util.ArrayList;
 
 public class Menu extends JPanel implements ActionListener,MouseListener {
     private Timer timer;
-    JFrame f;
+    boolean star =true;
 
-    public Menu(JFrame fa){
-        f =fa;
+    Screen f;
+    Scene game = new Scene();
+    public boolean b = true;
+
+
+    public Menu(JFrame k){
+        f = (Screen)k;
         setFocusable(true);
         //init timer
         this.addMouseListener(this);
@@ -23,6 +28,7 @@ public class Menu extends JPanel implements ActionListener,MouseListener {
     @Override
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
+        if(b){
         //background
         Image Start = loadImage("img/splash.png");
         Image[] buttons = new Image[3];
@@ -37,8 +43,9 @@ public class Menu extends JPanel implements ActionListener,MouseListener {
         for (int i =0;i<3;i++){
             g.drawImage(buttons[i],x,y,131,55,null);
             y+=65;
+        }}else{
+            game.paintComponent(g);
         }
-
     }
 
     public Rectangle getBoundsStart(){
@@ -58,11 +65,15 @@ public class Menu extends JPanel implements ActionListener,MouseListener {
         return image;
     }
 
+
     @Override
     public void mouseClicked(MouseEvent e) {
         Point mo = e.getPoint();
         if(getBoundsStart().contains(mo)){
             System.out.println("Start");
+            f.removeAll();
+            f.add(new Scene());
+
         }
         if(getBoundsScores().contains(mo)){
             System.out.println("Scores");
@@ -70,6 +81,7 @@ public class Menu extends JPanel implements ActionListener,MouseListener {
         }
         if(getBoundsExit().contains(mo)){
             System.out.println("Exit");
+            f.dispose();
         }
     }
 
@@ -96,4 +108,6 @@ public class Menu extends JPanel implements ActionListener,MouseListener {
     public void actionPerformed(ActionEvent e) {
         repaint();
     }
+
+
 }

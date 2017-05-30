@@ -39,6 +39,7 @@ public class Scene extends JPanel implements ActionListener{
     //jump up
     boolean up = true;
     //floor
+    int li=3;
     Image[] f;
     Image[] f2;
     Image[] f3;
@@ -62,7 +63,6 @@ public class Scene extends JPanel implements ActionListener{
 
     public Scene(){
         //key input
-
         addKeyListener(key);
         setFocusable(true);
         //init timer
@@ -78,7 +78,7 @@ public class Scene extends JPanel implements ActionListener{
         //inicialice cordenate variables
         String[] init = {"1","2","3","GO!"};
         //load background
-        Image background = this.loadImage("img/fondo-cielo.png");
+        Image background;
         Image clouds = this.loadImage("img/fondo-nubes.png");
         //load floorSprites
         Image[] floorSprites = new Image[4];
@@ -89,7 +89,16 @@ public class Scene extends JPanel implements ActionListener{
         //floor to paint
 
         //draw backgorud
-        g.drawImage(background,0,0,null);
+        if(xcounter<100){
+            background = this.loadImage("img/fondo-cielo.png");
+        }else if(xcounter>100 && xcounter<200){
+            background = this.loadImage("img/sample.png");
+        }else if(xcounter>200 && xcounter<300){
+            background = this.loadImage("img/MaybeAcity.jpg");
+        }else{
+            background = this.loadImage("img/fondo-cielo.png");
+        }
+        g.drawImage(background,0,0,1280,720,null);
         g.drawImage(clouds,0,0,null);
         //draw score
         String score = Integer.toString(xcounter);
@@ -108,6 +117,17 @@ public class Scene extends JPanel implements ActionListener{
 
         g.drawString("Score: "+score,950,50);
         //load character
+        Image[] lifes = new Image[3];
+        for (int i=0;i<3;i++){
+            lifes[i] = this.loadImage("img/Heart.png");
+        }
+        int xlife =50;
+        for (int i=0;i<li;i++){
+            g.drawImage(lifes[i],xlife,20,30,30,null);
+            xlife+=35;
+        }
+
+
         Image[] chSprites = new Image[11];
         Image[] chSpritesJump = new Image[11];
         Image[] chSpritesDead = new Image[11];
@@ -182,8 +202,6 @@ public class Scene extends JPanel implements ActionListener{
         }
         r = new Rectangle(xf2+40,yf+80,160,200);
         fall[2] = r;
-        ////g.drawRect(xf2+25,yf+80,160,200);
-        System.out.println("x: " +(xf2+25)+ " y: "+(yf+80)+" -160"+"-200");
         xf3=xm3;
         for (int j =0;j<f3.length;j++){
             g.drawImage(f3[j],xf3,yf,150,250,null);
@@ -219,13 +237,26 @@ public class Scene extends JPanel implements ActionListener{
         }else if(dead){
             g.drawImage(chSpritesDead[chscounter],175,yd,111,160,null);
             yd+=10;
+
+
             if(chscounter>8){
                 Font currentFont = g.getFont();
                 Font newFont = currentFont.deriveFont(currentFont.getSize() * 3F);
                 g.setColor(Color.red);
                 g.setFont(newFont);
                 g.drawString("You are dead!!",150,300);
-                timer.stop();
+                JFrame frame = new JFrame();
+                JLabel l = new JLabel("Ingresa tu nombre :");
+                JTextField name = new JTextField();
+                JButton button = new JButton("enviar");
+                button.addActionListener(new Scoreisitener(name));
+                li--;
+                run = true;
+                dead = false;
+
+                if(li<0) {
+                    timer.stop();
+                }
             }
         }
         colition =true;

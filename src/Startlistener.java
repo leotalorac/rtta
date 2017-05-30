@@ -16,7 +16,7 @@ public class Startlistener implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent event){
         frame.removeAll();
-        frame = new Screen(2);
+        frame = new Screen(1);
     }
 
 }
