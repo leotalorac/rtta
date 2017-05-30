@@ -6,11 +6,14 @@ import javax.swing.*;
 
 
 public class Screen  extends JFrame{
-    public Screen(){
-        /*Menu m = new Menu();
-        this.add(m);*/
-        Scene s = new Scene();
-        this.add(s);
+    public Screen(int i){
+        if(i==1){
+            Menu m = new Menu(this);
+            this.add(m);
+        }else{
+            Scene s = new Scene();
+            this.add(s);
+        }
         setResizable(false);
         pack();
     }

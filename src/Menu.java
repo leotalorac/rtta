@@ -5,13 +5,19 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.*;
+import java.util.ArrayList;
 
-public class Menu extends JPanel implements MouseListener {
+public class Menu extends JPanel implements ActionListener,MouseListener {
     private Timer timer;
+    JFrame f;
 
-
-    public Menu(){
-
+    public Menu(JFrame fa){
+        f =fa;
+        setFocusable(true);
+        //init timer
+        this.addMouseListener(this);
+        timer = new Timer(25, (ActionListener) this);
+        timer.start();
     }
 
     @Override
@@ -35,6 +41,16 @@ public class Menu extends JPanel implements MouseListener {
 
     }
 
+    public Rectangle getBoundsStart(){
+        return new Rectangle(580, 480, 131, 55);
+    }
+    public Rectangle getBoundsScores(){
+        return new Rectangle(580, 545, 131, 55);
+    }
+    public Rectangle getBoundsExit(){
+        return new Rectangle(580, 610, 131, 55);
+    }
+
     //load a image function
     public Image loadImage(String imageName){
         ImageIcon ii = new ImageIcon(imageName);
@@ -44,7 +60,17 @@ public class Menu extends JPanel implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        Point mo = e.getPoint();
+        if(getBoundsStart().contains(mo)){
+            System.out.println("Start");
+        }
+        if(getBoundsScores().contains(mo)){
+            System.out.println("Scores");
 
+        }
+        if(getBoundsExit().contains(mo)){
+            System.out.println("Exit");
+        }
     }
 
     @Override
@@ -65,5 +91,9 @@ public class Menu extends JPanel implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {
 
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        repaint();
     }
 }

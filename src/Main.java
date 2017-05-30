@@ -7,7 +7,8 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String [] args){
-        Screen frame = new Screen();
+        Screen frame = new Screen(2);
+        Screen frame2 = new Screen(2);
         frame.setTitle("Running through the Ages");
         frame.setSize(1280,720);
         frame.setLocationRelativeTo(null);
